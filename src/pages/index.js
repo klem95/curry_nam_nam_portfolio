@@ -127,13 +127,9 @@ const links = [
 
 export const query = graphql`
   {
-    gcms {
-      projects {
+    allGraphCmsProject {
+      nodes {
         project_title
-        test_text {
-          raw
-        }
-        id
       }
     }
   }
@@ -146,7 +142,7 @@ const IndexPage = ({ data }) => {
     <main style={pageStyles}>
       <title>Home Page</title>
       <h1 style={headingStyles}>
-        Congratulations {data.gcms.projects[0].project_title}
+        Congratulations {data.allGraphCmsProject.nodes[0].project_title}
         <br />
         <span style={headingAccentStyles}>—  just made a Gatsby site! </span>
         <span role="img" aria-label="Party popper emojis">
