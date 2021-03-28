@@ -1,9 +1,9 @@
 import * as React from "react"
 import { graphql, useStaticQuery, useQuery, Link } from 'gatsby';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
 import styled from 'styled-components'
+import Footer from '../components/footer'
+import Header from '../components/header'
+import Dashboard from '../components/Dashboard'
 
 const CenterDiv = styled.div`
   text-align: center;
@@ -24,38 +24,16 @@ export const query = graphql`
 const IndexPage = ({ data }) => {
   return (
     <main>
+      <Dashboard/>
       <title>Home Page</title>
-      <Container>
-        <Row>
-          <Col sm={12} lg={6}> 
-            <CenterDiv>
-              1 of 2
-            </CenterDiv>
-          </Col >
-          <Col sm={12} lg={6}> 
-            <CenterDiv>
-              2 of 2
-            </CenterDiv>
-          </Col>
-        </Row>
-        <Row>
-        <Col> 
-            <CenterDiv>
-              1 of 3
-            </CenterDiv>
-          </Col>
-          <Col> 
-            <CenterDiv>
-              2 of 3
-            </CenterDiv>
-          </Col>
-          <Col> 
-            <CenterDiv>
-              3 of 3
-            </CenterDiv>
-          </Col>
-        </Row>
-      </Container>
+      <Header/>
+      <h1>Hello {data.allGraphCmsProject.nodes[0].project_title} </h1>
+      <div>
+      <Link to="/404/">404</Link>
+      <Link to="/contact/">Contact</Link>
+
+    </div>
+      <Footer/>
     </main>
   )
 }

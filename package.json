@@ -15,10 +15,13 @@
     "clean": "gatsby clean"
   },
   "dependencies": {
+    "@material-ui/core": "^4.11.3",
+    "@material-ui/icons": "^4.11.2",
     "babel-plugin-styled-components": "^1.12.0",
     "bootstrap": "^4.6.0",
     "gatsby": "^3.1.2",
     "gatsby-plugin-image": "^1.1.2",
+    "gatsby-plugin-material-ui": "^2.1.10",
     "gatsby-plugin-react-helmet": "^4.1.0",
     "gatsby-plugin-sharp": "^3.1.2",
     "gatsby-plugin-sitemap": "^3.1.0",
@@ -28,9 +31,9 @@
     "gatsby-source-graphql": "^3.1.0",
     "gatsby-transformer-sharp": "^3.1.0",
     "react": "^17.0.1",
-    "react-bootstrap": "^1.5.2",
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",
+    "recharts": "^2.0.9",
     "styled-components": "^5.2.1"
   }
 }
