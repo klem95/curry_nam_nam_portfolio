@@ -7,6 +7,7 @@ import styled from 'styled-components'
 
 const CenterDiv = styled.div`
   text-align: center;
+  background-color: palevioletred;
 `
 
 export const query = graphql`
@@ -26,12 +27,12 @@ const IndexPage = ({ data }) => {
       <title>Home Page</title>
       <Container>
         <Row>
-          <Col> 
+          <Col sm={12} lg={6}> 
             <CenterDiv>
               1 of 2
             </CenterDiv>
-          </Col>
-          <Col> 
+          </Col >
+          <Col sm={12} lg={6}> 
             <CenterDiv>
               2 of 2
             </CenterDiv>
