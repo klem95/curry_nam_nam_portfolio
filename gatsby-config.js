@@ -10,6 +10,7 @@ module.exports = {
     "gatsby-plugin-sitemap",
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
+    
     {
       resolve: "gatsby-source-filesystem",
       options: {
@@ -17,6 +18,12 @@ module.exports = {
         path: "./src/images/",
       },
       __key: "images",
+      resolve: `gatsby-source-graphql`,
+      options: {
+        typeName: `GraphCMS`,
+        fieldName: `gcms`,
+        url: 'https://api-eu-central-1.graphcms.com/v2/ckmryztzxzgr901z6c8b2ft4c/master',
+      }
     },
   ],
 };

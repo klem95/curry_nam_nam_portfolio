@@ -1,5 +1,5 @@
 import * as React from "react"
-
+import { graphql, useStaticQuery, useQuery, Link } from 'gatsby';
 // styles
 const pageStyles = {
   color: "#232129",
@@ -125,15 +125,30 @@ const links = [
   },
 ]
 
+export const query = graphql`
+  {
+    gcms {
+      projects {
+        project_title
+        test_text {
+          raw
+        }
+        id
+      }
+    }
+  }
+`
+
+
 // markup
-const IndexPage = () => {
+const IndexPage = ({ data }) => {
   return (
     <main style={pageStyles}>
       <title>Home Page</title>
       <h1 style={headingStyles}>
-        Congratulationfasfasfass
+        Congratulations {data.gcms.projects[0].project_title}
         <br />
-        <span style={headingAccentStyles}>— you just made a Gatsby site! </span>
+        <span style={headingAccentStyles}>—  just made a Gatsby site! </span>
         <span role="img" aria-label="Party popper emojis">
           🎉🎉🎉
         </span>
